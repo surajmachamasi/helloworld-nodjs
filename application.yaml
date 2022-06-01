@@ -1,0 +1,16 @@
+apiVersion: argoproj.io
+kind: Application 
+metadata: 
+  name: my-nodejs-app
+  namespace: default
+
+spec:
+  project: default
+
+  source: 
+    repoURL: https://github.com/surajmachamasi/helloworld-nodjs.git 
+    targetRevision: HEAD 
+    path: dev
+  destination:
+    server:  https://kubernetes.default.svc 
+    
